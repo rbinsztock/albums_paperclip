@@ -1,0 +1,46 @@
+<%= simple_form_for @album, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :nom, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nom, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+  <h4>New Files</h4>
+
+  <% f.fields_for :images do |image_fields| %>
+
+    <% if image_fields.object.new_record? %>
+    <p>
+      <%= image_fields.file_field :image %>
+    </p>
+    <% end %>
+
+  <% end %>
+</div>
+
+
+  <h4>Old Files</h4>
+
+  <% f.fields_for :images do |image_fields| %>      
+
+    <% unless image_fields.object.new_record? %>
+    <div class="thumb">
+      <%= link_to image_tag(image_fields.object.image.url(:thumb)), image_fields.object.image.url(:original) %>
+      <%= image_fields.check_box :_destroy %>     
+    </div>  
+    <% end %>
+
+  <% end %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                albums_path, :class => 'btn' %>
+  </div>
+<% end %>
