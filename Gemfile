@@ -6,12 +6,13 @@ gem 'rails', '3.2.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem "paperclip", "~> 3.0"
+gem "paperclip"
 gem 'devise'
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem 'jquery-rails'
 gem 'simple_form'
+gem "cocaine"
 
 # Gems used only for assets and not required
 # in production environments by default.

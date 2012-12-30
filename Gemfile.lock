@@ -136,11 +136,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cocaine
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
   less-rails
-  paperclip (~> 3.0)
+  paperclip
   rails (= 3.2.9)
   sass-rails (~> 3.2.3)
   simple_form

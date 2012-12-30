@@ -14,7 +14,7 @@
   <div class="control-group">
   <h4>New Files</h4>
 
-  <% f.fields_for :images do |image_fields| %>
+  <%= f.fields_for :images do |image_fields| %>
 
     <% if image_fields.object.new_record? %>
     <p>
@@ -28,7 +28,7 @@
 
   <h4>Old Files</h4>
 
-  <% f.fields_for :images do |image_fields| %>      
+  <%= f.fields_for :images do |image_fields| %>      
 
     <% unless image_fields.object.new_record? %>
     <div class="thumb">
